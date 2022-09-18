@@ -28,6 +28,7 @@ header img{
 }
 header{
     padding-top: 32px;
+    height: calc(120px+32px);
     
 }
 header div{
@@ -39,8 +40,16 @@ header div{
     
     display: flex;
     padding: 4px;
+
+    transition: transform .3s;
+
+    animation: fromTop 0.4s .2s backwards;
+    
 }
- 
+
+header div:hover{
+    transform: scale(1.1);
+}
 
 main {
     max-width: 580px;
@@ -78,12 +87,57 @@ section ul {
     margin-top: 24px;
     flex-wrap: wrap;
 }
+section ul li{
+    transition: transform .3s;
+}
+section ul li:hover{
+    transform: scale(1.1);
+}
+main section{
+    animation: fromBottom .7s backwards;
+}
+
+main section:nth-child(1){
+    animation-delay: 0s ;
+}
+
+main section:nth-child(2){
+    animation-delay: .4s ;
+}
+
+main section:nth-child(3){
+    animation-delay: .8s;
+}
 .game-list img{
     width: 110px;
-    border-radius: 70px;
+    border-radius: 40px;
 }
 .channel-list img{
     border-radius: 50%;
     width: 70px;
     border: 1px solid #443e54;
+}
+
+@keyframes fromTop {
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBottom {
+    from{
+        opacity: 0;
+        transform: translatex(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translatex(0);
+    
+
+    }
 }
